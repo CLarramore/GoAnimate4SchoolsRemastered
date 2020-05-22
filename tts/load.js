@@ -117,7 +117,7 @@ function processVoice(voiceName, text) {
 				});
 				console.log(https.get({
 					host: 'text-to-speech-demo.ng.bluemix.net',
-					path: `/api/v1/synthesize?${q}`,
+					path: `/api/v3/synthesize?${q}`,
 				}, r => {
 					var buffers = [];
 					r.on('data', d => buffers.push(d));
@@ -135,7 +135,25 @@ function processVoice(voiceName, text) {
 				});
 				console.log(https.get({
 					host: 'www.fromtexttospeech.com',
-					path: `/products/tts/audio?${q}`,
+					path: `/api-public.addthis.com/url/shares.json?url=http%3A%2F%2Fwww.fromtexttospeech.com%2F&callback=_ate.cbs.sc_httpwwwfromtexttospeechcom0?${q}`,
+				}, r => {
+					var buffers = [];
+					r.on('data', d => buffers.push(d));
+					r.on('end', () => res(Buffer.concat(buffers)));
+					r.on('error', rej);
+				}));
+				break;
+			}
+			case 'fifteen': {
+				var q = qs.encode({
+					text: text,
+					voice: voice.arg,
+					download: true,
+					accept: "output/mp3",
+				});
+				console.log(https.get({
+					host: 'fifteen.ai',
+					path: `/app/getAudioFile?${q}`,
 				}, r => {
 					var buffers = [];
 					r.on('data', d => buffers.push(d));
