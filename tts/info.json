@@ -407,8 +407,8 @@
 			"country": "US",
 			"language": "en",
 			"gender": "M",
-			"source": "readloud",
-			"arg": "eric",
+			"source": "fromtexttospeech",
+			"arg": "IVONA Eric22",
 			"desc": "Eric"
 		},
 		"amy_polly": {
