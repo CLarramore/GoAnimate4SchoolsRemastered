@@ -409,7 +409,7 @@
 			"gender": "M",
 			"source": "fromtexttospeech",
 			"arg": "IVONA Eric22",
-			"desc": "Eric"
+			"desc": "Eric (FromTextToSpeech)"
 		},
 		"amy_polly": {
 			"country": "GB",
