@@ -126,15 +126,15 @@ function processVoice(voiceName, text) {
 				}));
 				break;
 			}
-			case 'lumenvox': {
+			case 'fromtexttospeech': {
 				var q = qs.encode({
 					text: text,
 					voice: voice.arg,
 					download: true,
-					accept: "audio/mp3",
+					accept: "output/mp3",
 				});
 				console.log(https.get({
-					host: 'www.lumenvox.com',
+					host: 'www.fromtexttospeech.com',
 					path: `/products/tts/audio?${q}`,
 				}, r => {
 					var buffers = [];
